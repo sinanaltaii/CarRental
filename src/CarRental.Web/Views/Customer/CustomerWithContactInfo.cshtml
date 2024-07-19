@@ -1,0 +1,59 @@
+﻿@model CarRental.Application.Features.Customer.Queries.GetCustomerWithContactInfo.CustomerWithContactInfoResponse
+@using CarRental.Application.Features.Customer.Queries.GetCustomerWithContactInfo
+
+@if (Model is not null and not NullCustomerWithContactInfoResponse && Model.CustomerResponse is { } customerResponse && Model.CustomerContactInfoResponse is { } customerContactInfoResponse)
+{
+    <div class="card mb-3">
+        <div class="card-header">
+            Customer Information
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">First Name:</div>
+                <div class="col-md-8">@Html.DisplayFor(p => customerResponse.FirstName)</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">Last Name:</div>
+                <div class="col-md-8">@Html.DisplayFor(p => customerResponse.LastName)</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">Personal Identity Number:</div>
+                <div class="col-md-8">@Html.DisplayFor(p => customerResponse.PersonalIdentityNumber)</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">Street Address:</div>
+                <div class="col-md-8">@Html.DisplayFor(model => customerContactInfoResponse.StreetAddress)</div>
+            </div>
+            @if (!string.IsNullOrWhiteSpace(customerContactInfoResponse.StreetAddressLine2))
+            {
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Street Address Line 2:</div>
+                    <div class="col-md-8">@Html.DisplayFor(model => customerContactInfoResponse.StreetAddressLine2)</div>
+                </div>
+            }
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">Postal Code:</div>
+                <div class="col-md-8">@Html.DisplayFor(model => customerContactInfoResponse.PostalCode)</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">City:</div>
+                <div class="col-md-8">@Html.DisplayFor(model => customerContactInfoResponse.City)</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">Phone Number:</div>
+                <div class="col-md-8">@Html.DisplayFor(model => customerContactInfoResponse.PhoneNumber)</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 font-weight-bold">Email Address:</div>
+                <div class="col-md-8">@Html.DisplayFor(model => customerContactInfoResponse.EmailAddress)</div>
+            </div>
+            @if (!string.IsNullOrWhiteSpace(customerContactInfoResponse.AlternatePhoneNumber))
+            {
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Alternate Phone Number:</div>
+                    <div class="col-md-8">@Html.DisplayFor(model => customerContactInfoResponse.AlternatePhoneNumber)</div>
+                </div>
+            }
+        </div>
+    </div>
+}

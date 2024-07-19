@@ -1,0 +1,13 @@
+.vs/
+.vscode/
+**/bin
+**/obj
+src/.idea/**/*
+
+/src/Somthing.Database/Scripts/GeneratedFullUpdate_SqlScript.sql
+# Rider ignores
+*.DotSettings.user
+/src/CarRental.Web/CarRental.Web.csproj.user
+/src/project/appsettings.local.json
+/src/PathToProject/*.csproj.user
+/src/MyProject/appsettings.local.json

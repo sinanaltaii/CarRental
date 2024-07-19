@@ -1,0 +1,44 @@
+﻿@model CarRental.Application.Features.Booking.Queries.BookingViewModel
+
+@{
+    ViewData["Title"] = "Pay";
+}
+
+<h1>Edit Vehicle</h1>
+
+<h4>Vehicle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Pay">
+            <input type="hidden" asp-for="BookingId" />
+                <div class="form-group">
+                    <label asp-for="BookingId" class="control-label"></label>
+                    <input asp-for="BookingId" class="form-control"/>
+                    <span asp-validation-for="BookingId" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <label asp-for="ExtraBookingId" class="control-label">Booking Id</label>
+                <input asp-for="ExtraBookingId" class="form-control" />
+                <span asp-validation-for="ExtraBookingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnDateTime" class="control-label">Return date</label>
+                <input asp-for="ReturnDateTime" value="@DateTime.Now" class="form-control"/>
+                <span asp-validation-for="ReturnDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MileageReading" class="control-label">Mileage reading</label>
+                <input asp-for="MileageReading" class="form-control"/>
+                <span asp-validation-for="MileageReading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Return car" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

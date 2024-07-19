@@ -1,0 +1,18 @@
+﻿@model CarRental.Application.Features.Customer.Queries.GetCustomerWithContactInfo.CustomerWithContactInfoResponse
+
+@{
+    ViewBag.Title = "Customer view";
+    Layout = "_Layout";
+}
+
+
+@await Component.InvokeAsync("SearchCustomerForm")
+
+<div class="mb-3">
+    <a asp-action="Create" asp-Controller="Customer">Create</a>
+</div>
+
+@if (ViewData["isSearchPerformed"] != null && (bool)ViewData["isSearchPerformed"]!)
+{
+    <p class="text-info-emphasis">No customer found</p>
+}

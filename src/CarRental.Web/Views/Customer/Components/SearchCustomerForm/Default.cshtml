@@ -1,0 +1,31 @@
+﻿@model CarRental.Web.Models.Customer.CustomerIdentityNumber
+
+<style>
+    .customer-search-button {
+        margin-left: 0.2em;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .customer-search-form-input {
+    }
+
+</style>
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form asp-controller="Customer" asp-action="SearchCustomerByPersonalIdentityNumber">
+            <div class="form-group">
+                <label asp-for="@Model.PersonalIdentityNumber" class="control-label">Personal Id Number</label>
+                <div class="input-group">
+                    <input asp-for="@Model.PersonalIdentityNumber" class="form-control customer-search-form-input" />
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary customer-search-button">Search</button>
+                    </div>
+                </div>
+                <span asp-validation-for="@Model.PersonalIdentityNumber" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
